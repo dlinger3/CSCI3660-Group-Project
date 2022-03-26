@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/app_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/banner_color"
+        android:fontFamily="@font/arcade"
+        android:padding="10dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/banner_text_color"
+        android:textSize="30sp"
+        tools:ignore="TextContrastCheck" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/history_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/subject_history"
+        android:background="@drawable/menu_button_background"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_below="@id/app_banner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/entertainment_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/subject_entertainment"
+        android:background="@drawable/menu_button_background"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_below="@id/history_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/science_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/subject_science"
+        android:background="@drawable/menu_button_background"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_below="@id/entertainment_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/exit_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/exit_app"
+        android:background="@drawable/menu_button_background"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_below="@id/science_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+
+
+</RelativeLayout>
