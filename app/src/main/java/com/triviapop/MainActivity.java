@@ -3,26 +3,29 @@ package com.triviapop;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button his_button;
-    private Button ent_button;
-    private Button sci_button;
+    private String SUBJECT = "subject";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button his_button, ent_button, sci_button;
+
+
         his_button = (Button) findViewById(R.id.history_button);
         his_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openQuiz_Activity();
+                String selection = "History";
+                openQuiz_Activity(selection);
             }
         });
 
@@ -30,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         ent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openQuiz_Activity();
+                String selection = "Entertainment";
+                openQuiz_Activity(selection);
             }
         });
 
@@ -38,36 +42,22 @@ public class MainActivity extends AppCompatActivity {
         sci_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openQuiz_Activity();
+                String selection = "Science";
+                openQuiz_Activity(selection);
             }
         });
     }
-    public void openQuiz_Activity() {
+
+
+
+    public void openQuiz_Activity(String selection) {
         Intent intent = new Intent(this, Quiz_Activity.class);
+        Bundle subjectData = new Bundle();
+        subjectData.putString("subject", selection);
+        intent.putExtras(subjectData);
+//        intent.putExtra(SUBJECT, selection);
         startActivity(intent);
     }
 
+
 }
-
-
-//    private int questionCount = 0;
-//    String[] questionLabels;
-//    HashSet<Questions> questionSet = new HashSet<Questions>();
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState)
-//    {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//        Resources resource = getResources();
-//        questionLabels = resource.getStringArray(R.array.question_count);
-//        TextView currentQuestionLabel = findViewById(R.id.question_number_text_view);
-//        currentQuestionLabel.setText(questionLabels[questionCount]);
-//
-//        for(Questions currQuestion : questionSet)
-//        {
-//            currentQuestionLabel.setText(questionLabels[questionCount++]);
-//        }
-//        //TODO read questions from file/database
-//        //TODO create logic to loop while populating the HashSet randomly with question objects from the read in file.
-//    }

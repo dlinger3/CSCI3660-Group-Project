@@ -19,7 +19,7 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/question_number_text_view"
+        android:id="@+id/question_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/app_banner"
@@ -33,7 +33,7 @@
         android:id="@+id/question_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/question_number_text_view"
+        android:layout_below="@+id/question_number"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"

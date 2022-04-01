@@ -4,7 +4,7 @@
     <string name="subject_entertainment">Entertainment</string>
     <string name="subject_science">Science</string>
     <string name="exit_app">Exit Application</string>
-    <string name="question_title">Question 0</string>
+    <string name="question_title">Question </string>
     <string name="question_text_toShow">This is where the question itself will display</string>
     <string name="question_fact">This is where the fact about the question will appear</string>
     <string name="answer_A">Answer A option</string>
