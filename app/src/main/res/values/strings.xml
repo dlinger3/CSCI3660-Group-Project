@@ -4,16 +4,16 @@
     <string name="subject_entertainment">Entertainment</string>
     <string name="subject_science">Science</string>
     <string name="exit_app">Exit Application</string>
-    <string name="question_title">Question </string>
-    <string name="question_text_toShow">This is where the question itself will display</string>
-    <string name="question_fact">This is where the fact about the question will appear</string>
-    <string name="answer_A">Answer A option</string>
-    <string name="answer_B">Answer B option</string>
-    <string name="answer_C">Answer C option</string>
-    <string name="answer_D">Answer D option</string>
+    <string name="question_title">%s</string>
+    <string name="question_text_toShow">%s</string>
+    <string name="question_fact">%s</string>
+    <string name="answer_A">%s</string>
+    <string name="answer_B">%s</string>
+    <string name="answer_C">%s</string>
+    <string name="answer_D">%s</string>
     <string name="return_to_menu">Return to Main Menu</string>
     <string name="next_question">Next Question</string>
-    <string name="question_result">Correct/Incorrect</string>
+    <string name="question_result">%s</string>
     <string name="quiz_complete">Quiz completed, nice job!</string>
     <string name="correct_answers">You answered _% of the questions correctly</string>
 </resources>
