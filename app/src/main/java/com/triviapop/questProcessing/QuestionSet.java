@@ -23,9 +23,9 @@ public class QuestionSet
         return question.toString();
     }
 
-    public String[] getAnswerSet()
+    public AnswerSet getAnswerSet()
     {
-        return answers.getAnswerArray();
+        return answers;
     }
 
     public String getFact()
