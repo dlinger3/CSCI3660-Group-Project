@@ -25,6 +25,10 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Objects;
 
+//TODO Pressing the app list icon on phone emulator is likely calling onPause(), pausing the app and then calling onResume() upon entering the app again,
+// at which point skips to the next question. This needs to be fixed so that the activity loads the correct question again upon resuming. Bundling the count variable, and
+// decrementing within the onPause(), and then sending the decremented count back to onResume() could be a solution.
+
 public class Quiz_Activity extends AppCompatActivity {
 
     private static final int NUMBER_QUESTIONS_IN_QUIZ = 10;
@@ -87,11 +91,6 @@ public class Quiz_Activity extends AppCompatActivity {
         scanForReturn(toMenuButton);
         scanForClick(radioGroup, questionSet);
         count++;
-        if(count == NUMBER_QUESTIONS_IN_QUIZ - 1)
-        {
-            finish();
-        }
-
     }
 
     private void scanForReturn(AppCompatButton toMenuButton) {
@@ -99,8 +98,8 @@ public class Quiz_Activity extends AppCompatActivity {
         toMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
                 startActivity(new Intent(Quiz_Activity.this,MainActivity.class));
+                finish();
             }
         });
     }

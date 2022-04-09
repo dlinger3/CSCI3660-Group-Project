@@ -33,9 +33,8 @@ public class Quiz_Complete_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Quiz_Complete_Activity.this,MainActivity.class);
-                intent.putExtra("returnedToMenu", true);
-                finish();
                 startActivity(intent);
+                finish();
             }
         });
     }

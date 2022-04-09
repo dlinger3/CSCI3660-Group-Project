@@ -7,14 +7,23 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-//TODO The return to menu buttons in the QUIZ ACTIVITY and QUIZ COMPLETE ACTIVITY are not working properly.
-//TODO They are returning to the menu, but the quiz activity is not getting destroyed therefore is not calling it's onCreate() function again
 //TODO I have also not done anything with the themes.xml files. Not necessarily needed (as far as I know) but feel free to implement them
 //TODO TEST TEST TEST TEST. Please test this, try to break it. Check for spelling errors in the text. Check that the answers are paired correctly to the documents in the google drive
 //TODO If you want to implement additional features, you have probably the rest of this week and possibly next.
 
+//TODO ::::::::::::::::::::::THE FOLLOWING IS STILL NEEDED FOR BASE REQUIREMENTS::::::::::::::::::::::::::::::::::::::::::
+// implement functionality to close the app when clicking the Exit Application button from the Main Menu.
+
+//TODO ::::::::::::::::::::::THE FOLLOWING IS STILL NEEDED FOR BASE REQUIREMENTS::::::::::::::::::::::::::::::::::::::::::
+//  implement functionality within the quiz activity so that it does not progress to the next question when the user clicks the app list button on their phone.
+//  additionally this also occurring when the user clicks the home screen and then returns to the app. Data needs to be bundled and adjusted in onPause() so that when the onResume() is called upon
+//  returning to the app it will still display the correct question. MORE DETAILS CAN BE FOUND IN THE QUIZ_ACTIVITY CLASS
+
+//TODO ::::::::::::::::::::::THE FOLLOWING IS STILL NEEDED FOR BASE REQUIREMENTS::::::::::::::::::::::::::::::::::::::::::
+//  there are possibly some of things as well but this is what I am aware of at the moment.
+
 //TODO :::::::NOTE:::::::
-//TODO This code currently only contains the data for the HISTORY subject.
+//TODO This code currently only contains the data for the HISTORY subject. The Science and Entertainment subjects will crash.
 
 public class MainActivity extends AppCompatActivity {
     @Override
