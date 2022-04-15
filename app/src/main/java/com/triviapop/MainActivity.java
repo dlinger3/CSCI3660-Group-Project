@@ -12,18 +12,10 @@ import android.widget.Button;
 //TODO If you want to implement additional features, you have probably the rest of this week and possibly next.
 
 //TODO ::::::::::::::::::::::THE FOLLOWING IS STILL NEEDED FOR BASE REQUIREMENTS::::::::::::::::::::::::::::::::::::::::::
-// implement functionality to close the app when clicking the Exit Application button from the Main Menu.
-
-//TODO ::::::::::::::::::::::THE FOLLOWING IS STILL NEEDED FOR BASE REQUIREMENTS::::::::::::::::::::::::::::::::::::::::::
-//  implement functionality within the quiz activity so that it does not progress to the next question when the user clicks the app list button on their phone.
-//  additionally this also occurring when the user clicks the home screen and then returns to the app. Data needs to be bundled and adjusted in onPause() so that when the onResume() is called upon
-//  returning to the app it will still display the correct question. MORE DETAILS CAN BE FOUND IN THE QUIZ_ACTIVITY CLASS
-
-//TODO ::::::::::::::::::::::THE FOLLOWING IS STILL NEEDED FOR BASE REQUIREMENTS::::::::::::::::::::::::::::::::::::::::::
-//  there are possibly some of things as well but this is what I am aware of at the moment.
-
-//TODO :::::::NOTE:::::::
-//TODO This code currently only contains the data for the HISTORY subject. The Science and Entertainment subjects will crash.
+//  still need to add unique graphics for the subjects - possibly can use android studio built in vector art.
+//  add questions/answer sets/facts for the Entertainment and Science subjects until there are 20 questions in each. Please add to drive documents first following the format already there (correct answers are highlighted)
+//  add app launcher logo to mipmap folder
+//  there are possibly some other things as well but this is what I am aware of at the moment.
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -64,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private void scanForClick()
     {
         //Variables for the subject buttons
-        Button his_button, ent_button, sci_button;
+        Button his_button, ent_button, sci_button, exit_button;
 
         //Gets the history button view and sets its event listener
         his_button = (Button) findViewById(R.id.history_button);
@@ -93,6 +85,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String selection = "Science";
                 openQuiz_Activity(selection);
+            }
+        });
+
+        exit_button = (Button) findViewById(R.id.exit_button);
+        exit_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finishAffinity();
             }
         });
     }

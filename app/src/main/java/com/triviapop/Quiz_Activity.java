@@ -1,9 +1,14 @@
 package com.triviapop;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,9 +31,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Objects;
 
-//TODO Pressing the app list icon on phone emulator is likely calling onPause(), pausing the app and then calling onResume() upon entering the app again,
-// at which point skips to the next question. This needs to be fixed so that the activity loads the correct question again upon resuming. Bundling the count variable, and
-// decrementing within the onPause(), and then sending the decremented count back to onResume() could be a solution.
 
 public class Quiz_Activity extends AppCompatActivity {
 
@@ -35,6 +38,7 @@ public class Quiz_Activity extends AppCompatActivity {
     private static int count;
     private static int numCorrect;
     private static LinkedList<QuestionSet> questionData;
+    private static String subject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,7 +47,7 @@ public class Quiz_Activity extends AppCompatActivity {
         setContentView(R.layout.quiz_activity);
         Log.i("INFO", "Quiz was created");
         Bundle savedData = getIntent().getExtras();
-        String subjectTableName = savedData.getString("subject");
+        subject = savedData.getString("subject");
 
         //resets the class variables.
         count = 0;
@@ -51,7 +55,7 @@ public class Quiz_Activity extends AppCompatActivity {
         questionData = new LinkedList<>();
 
         QuestionSetCaller dbHelper = new QuestionSetCaller(this);
-        questionData = dbHelper.getQuestionSet(subjectTableName);
+        questionData = dbHelper.getQuestionSet(subject);
         Log.i("INFO", "SIZE OF HASHMAP IS " + questionData.size());
     }
 
@@ -62,6 +66,23 @@ public class Quiz_Activity extends AppCompatActivity {
         setContentView(R.layout.quiz_activity);
         Log.i("INFO", "Quiz was resumed");
 
+        //Sets background image
+        RelativeLayout quizScreen = (RelativeLayout) findViewById(R.id.quiz_activity);
+        switch (subject)
+        {
+            case "History":
+                quizScreen.setBackgroundResource(R.drawable.history_bg);
+                break;
+            case "Entertainment":
+                quizScreen.setBackgroundResource(R.drawable.entertainment_bg);
+                break;
+            case "Science":
+                quizScreen.setBackgroundResource(R.drawable.science_bg);
+                break;
+            default:
+                quizScreen.setBackgroundResource(R.color.white);
+        }
+        //finds ID's of radio buttons and text views
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.answer_group); //Grabs the link to the radio group of answers
         RadioButton radioButtonA = (RadioButton) findViewById(R.id.answerA);
         RadioButton radioButtonB = (RadioButton) findViewById(R.id.answerB);
@@ -72,6 +93,7 @@ public class Quiz_Activity extends AppCompatActivity {
         TextView questionTextView = (TextView)findViewById(R.id.question_text);  //Grabs the link to the question text
         AppCompatButton toMenuButton = (AppCompatButton) findViewById(R.id.return_to_menu);
 
+        //Gets the questionSet object at the index specified by count
         QuestionSet questionSet = questionData.get(count);
         String questionNum = "Question " + (count + 1);
         String factText = questionSet.getFact();
@@ -80,7 +102,7 @@ public class Quiz_Activity extends AppCompatActivity {
         Log.d("DEBUG", "Question number:" + questionNum);
         Log.d("DEBUG", "Fact:" + factText);
 
-
+        //Sets the values for the views and radio buttons
         questionNumView.setText(questionNum);
         questionTextView.setText(questionSet.getQuestion());
         radioButtonA.setText(questionSet.getAnswerSet().getA());
@@ -88,10 +110,25 @@ public class Quiz_Activity extends AppCompatActivity {
         radioButtonC.setText(questionSet.getAnswerSet().getC());
         radioButtonD.setText(questionSet.getAnswerSet().getD());
 
+        //Functions that setup the event handlers for the buttons
         scanForReturn(toMenuButton);
         scanForClick(radioGroup, questionSet);
-        count++;
     }
+
+    @Override
+    protected void onNewIntent(Intent intent)
+    {
+        Log.d("DEBUG", "ENTERED onNewIntent...");
+        super.onNewIntent(intent);
+        setIntent(intent);
+        Bundle data = getIntent().getExtras();
+        count = data.getInt("count");
+//        if(count >= NUMBER_QUESTIONS_IN_QUIZ - 1)
+//        {
+//            finish();
+//        }
+    }
+
 
     private void scanForReturn(AppCompatButton toMenuButton) {
 
@@ -111,6 +148,10 @@ public class Quiz_Activity extends AppCompatActivity {
         intent.putExtra("fact", factText);
         intent.putExtra("correct", numCorrect);
         startActivity(intent);
+        if(count >= NUMBER_QUESTIONS_IN_QUIZ - 1)
+        {
+            finish();
+        }
     }
 
     @SuppressLint("NonConstantResourceId")

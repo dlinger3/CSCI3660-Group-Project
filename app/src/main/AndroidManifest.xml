@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TriviaPop">
-        <activity android:name=".Quiz_Activity"/>
+        <activity android:name=".Quiz_Activity" android:launchMode="singleTask"/>
         <activity android:name=".Question_Result_Activity"/>
         <activity android:name=".Quiz_Complete_Activity"/>
         <activity
