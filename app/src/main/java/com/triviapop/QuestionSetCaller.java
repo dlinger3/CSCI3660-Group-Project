@@ -417,6 +417,16 @@ public class QuestionSetCaller extends SQLiteOpenHelper
     questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest9', ' What video game sci-fi series has the player face off against a galactic threat known as The Reapers?', 'answ9', 'fact9')");
     questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest10', 'What MMO (Massively Multiplayer Online) video game holds the record for having the highest number of players of all time?', 'answ10', 'fact10')");
     questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest11', 'What actress that has a prominent role in the Marvel Cinematic Universe also had a brief career as a pop star when she was younger?', 'answ11', 'fact11')");
+    questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest12', 'What is the annual television event titled Wrestlemania?', 'answ12', 'fact12')");
+    questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest13', ' Who won the Superbowl in the year 2022', 'answ13', 'fact13')");
+    questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest14', 'What country were the 2022 Olympics held in?', 'answ14', 'fact14')");
+    questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest15', ' What physical technology allows for the backgrounds in movies to be set as whatever?', 'answ15', 'fact15')");
+    questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest16', ' The famous cartoons in Japan known as:', 'answ16', 'fact16')");
+    questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest17', 'Finish WWE wrestler the Rock famous line: If you can smell…', 'answ17', 'fact17')");
+    questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest18', 'Which actor plays the character John Wick in the Movie series: John Wick', 'answ18', 'fact18')");
+    questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest19', ' In which sport do players not sweat?.', 'answ19', 'fact19')");
+    questionDB.execSQL("INSERT INTO Entertainment_Questions(questID, question, answerID, factID) " + "VALUES ('quest20', 'Where did the 2022 Fifa Soccer World Cup take place?', 'answ20', 'fact20')");
+
     
     questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ1', 'Slumdog Millionaire', 'Gone with the Wind', 'Lord of the Rings: The Return of the King', 'The Last Emperor', ''Lord of the Rings: The Return of the King)");
     questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ2', '7', '8', '9', '10', '9')");
@@ -429,6 +439,16 @@ public class QuestionSetCaller extends SQLiteOpenHelper
     questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ9', 'Dead Space', 'Mass Effect', 'Metroid Prime', 'Halo', 'Mass Effect')");
     questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ10', 'Elder Scrolls Online', 'Star Wars: The Old Republic', 'World of Warcraft', 'Eve Online', 'World of Warcraft')");
     questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ11', 'Brie Larson', ' Scarlett Johansson', 'Elizabeth Olsen', 'Zoe Saldana', 'Brie Larson')");
+    questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ12', 'A highschool wrestling championship', 'A College level wrestling competition', ' A wrestling event by the WWE Inc', 'Sumo-wrestler tournament', ' A wrestling event by the WWE Inc')");
+    questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ13', 'Los Angeles Rams', 'Cincinnati Bengals ', 'Las Vegas Raiders', 'Atlanta Falcons', 'Los Angeles Rams')");
+    questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ14', 'United States', 'Brazile', 'China', 'India', 'China')");
+    questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ15', 'Video editing program', 'Green screen', 'Motion designing', 'Crash test dummies', 'Green screen')");
+    questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ16', 'Animations', 'Japanese cartoons', 'drawing series', 'Anime', 'Anime')");
+    questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ17', 'What Barack is cooking', 'What the Rock is cooking', 'Then you do not have a runny nose', 'Let me know if you can', 'What the Rock is cooking')");
+    questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ18', 'Keanu Reeves', 'Tom Holland', 'Andrew Garfield', 'Toby McGuire', 'Keanu Reeves')");
+    questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ19', 'Soccer', 'Hockey', 'Swimming', 'Rugby', 'Swimming')");
+    questionDB.execSQL("INSERT INTO Entertainment_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ20', 'Qatar', 'Brazil', 'Paraguay', 'Chile', 'Qatar')");
+
 
     questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact1', 'The Lord of the Rings: The Return of the King was nominated for 11 Oscars and was the winner of all 11 nominations. It is currently tied with two other films that also hold 11 Oscar wins.')");
     questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact2', 'The Fast and the Furious was released in 2001. Since then 8 additional films have been created with more productions planned. Short films and spin off movies have also been made. It is the 7th highest grossing film series of all time.')");
@@ -441,6 +461,15 @@ public class QuestionSetCaller extends SQLiteOpenHelper
     questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact9', 'In Mass Effect The Reapers are an advanced ancient machine race that returns every 50 thousand years to eradicate life in the galaxy. Players take on the role of Commander Shepherd and are tasked with not only defeating the Reapers but convincing others that they actually even exist to begin with.')");
     questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact10', 'Since 2004 when it launched World of Warcraft has seen 117655554 unique accounts throughout its lifetime. To this day World of Warcraft remains one of the most popular MMOs of all time.')");
     questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact11', 'Brie Larson had a brief career as a pop star and released her debut album in 2005 titled Finally Out of P.E.')");
+    questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact12', 'The WWE has aired 38 consistent Wrestlemania event’s year after year regardless of world events such as the covid-19 pandemic lockdowns.')");
+    questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact13', 'Tickets for this game were so expensive and so were the parking tickets. They ranged from anywhere between $6800 up to over $80000.')");
+    questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact14', 'Many Olympic participants/ competitors complained about how poor of a service they received in the 2022 Beijing olympics')");
+    questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact15', 'Green screens were first seen in the 1980s thanks to a Man named Richard Edlund when he used a greenscreen for the film: The Empire strikes back')");
+    questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact16', 'In modern times Americans watch more Anime than they do American animations.')");
+    questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact17', 'This phrase has been used in memes and jokes over the centuries as its a very popular phrase.')");
+    questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact18', 'Keanu Reeves plays John Wick in all four John Wick Movies. John Wick is a very humble and generous individual who donates most of his income to charities.')");
+    questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact19', 'Although hockey is played in a very cold environment. The heavy suits and fast paced sport causes them to sweat more than one would think.')");
+    questionDB.execSQL("INSERT INTO Entertainment_Facts(factID, fact)" + "VALUES ('fact20', 'Brazil is the country with the most Fifa world cup wins. And prior to 2022; France was the latest champion.since 2018')");
 
     }
 
