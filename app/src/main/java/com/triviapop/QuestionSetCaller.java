@@ -487,6 +487,16 @@ public class QuestionSetCaller extends SQLiteOpenHelper
     questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest9', 'What was the name of the last supercontinent that formed on Earth?', 'answ9', 'fact9')");
     questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest10', 'Out of the following: which of these is NOT one of the layers of Earths atmosphere?', 'answ10', 'fact10')");
     questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest11', 'In computing what does CPU stand for?', 'answ11', 'fact11')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest12', ' According to NASA the sun is _ miles away from the earth:', 'answ12', 'fact12')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest13', 'Who is considered the Father of Spatial exploration?', 'answ13', 'fact13')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest14', 'According to the 2nd law of thermodynamics; in order to have a pressurized system you need what?', 'answ14', 'fact14')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest15', 'In network communications which of the following allows communication across the world?', 'answ15', 'fact15')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest16', ' Which scientist discovered electricity and developed a way of utilizing it?', 'answ16', 'fact16')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest17', 'What year was the theory evolution discovered?', 'answ17', 'fact17')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest18', 'Two individuals who are responsible for travel across continent to continent in a matter of hours.', 'answ18', 'fact18')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest19', 'Which of the following statements is true about water:', 'answ19', 'fact19')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest10', 'What is needed to start/have a fire?', 'answ20', 'fact20')");
+
     
     questionDB.execSQL("INSERT INTO Science_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ1', 'The Core layers', 'The Mantle layers', 'The Crust layers', 'The Magma layers', 'The Magma layers')");
     questionDB.execSQL("INSERT INTO Science_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ2', 'Proxima Centauri', 'Barnards Star', 'Sirius', 'Wolf 359', 'Proxima Centauri')");
@@ -499,7 +509,17 @@ public class QuestionSetCaller extends SQLiteOpenHelper
     questionDB.execSQL("INSERT INTO Science_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ9', 'Laurasia', 'UR', 'Pangaea', 'Euroamerica', 'Pangaea')");
     questionDB.execSQL("INSERT INTO Science_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ10', 'Troposphere', 'Thermosphere', 'Lithosphere', 'Lithosphere', 'Lithosphere')");
     questionDB.execSQL("INSERT INTO Science_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ11', 'Central Power Unit', 'Central Processing Unit', 'Core Power Unit', 'Common Processing Unit', 'Central Processing Unit')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest12', ' According to NASA the sun is _ miles away from the earth:', 'answ12', 'fact12')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest13', 'Who is considered the Father of Spatial exploration?', 'answ13', 'fact13')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest14', 'According to the 2nd law of thermodynamics; in order to have a pressurized system you need what?', 'answ14', 'fact14')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest15', 'In network communications which of the following allows communication across the world?', 'answ15', 'fact15')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest16', ' Which scientist discovered electricity and developed a way of utilizing it?', 'answ16', 'fact16')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest17', 'What year was the theory evolution discovered?', 'answ17', 'fact17')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest18', 'Two individuals who are responsible for travel across continent to continent in a matter of hours.', 'answ18', 'fact18')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest19', 'Which of the following statements is true about water:', 'answ19', 'fact19')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest10', 'What is needed to start/have a fire?', 'answ20', 'fact20')");
 
+    
     questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact1', 'While much of the layer that makes up the Earths mantle consist of magma there is not a layer that is referred to as the Magma Layers. The magma from the Earths mantle can be pushed through holes and cracks in the Earths crust which can lead to volcanic eruptions.')");
     questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact2', 'At 4.246 light years away Proxima Centauri was discovered in 1915 and resides in a triple star system called Alpha Centauri. Using the current fastest human made object in space that moves at a speed of 250000kmh. It would still take thousands of years to arrive at Proxima Centauri')");
     questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact3', 'The mitochondria is responsible for releasing energy from food that an organism consumes in a process known as cellular respiration. This process produces the majority of a cells access to chemical energy in an organism leading to it commonly being referred to as the powerhouse of the cell')");
@@ -511,8 +531,17 @@ public class QuestionSetCaller extends SQLiteOpenHelper
     questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact9', 'The last supercontinent to form on Earth existed approximately 200-300 million years ago. The next supercontinent to form will see Asia and the Americas joined together in its earliest stages forming the new supercontinent Amasia. Throughout time Earth has formed seven supercontinents.')");
     questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact10', 'The Lithosphere is apart of Earths outermost shell that is made up of Earths crust and the upper mantle. There are multiple layers that make up Earths atmosphere. The other layers of the atmosphere include the Mesosphere and Exosphere.')");
     questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact11', 'In 1974 the Intel 4004 became the worlds first micro processing unit and was capable of processing 92600 instruction per minute. Today consumer CPUs are capable of processing more than 3000000000 instructions per second. With new discoveries and technologies in Quantum Computing the speed at which computers can process commands could once again be on the verge of increasing significantly.')");
+    questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact12', 'According to NASA the sun rotates on its axis every 26 days. This is done by studying the spots on the sun (sunspots)')");
+    questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact13', 'Wernher Von Braun was a German scientist that was a captured Nazi German scientist and worked for the United States Government after being captured. ')");
+    questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact14', ' Did you know that Scientists are still unaware of what keeps the world contained while being able to travel to outer space and perform space exploration!')");
+    questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact15', 'The name of the underwater/ underground cabling system is called TAT14 and is responsible for network communications across the world!')");
+    questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact16', 'Benjamin Franklin was the scientist who discovered electricity in June of 1752. This was done by attaching a key to the end of a key on a kite during a storm at night.')");
+    questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact17', 'Evolution is still only a theory meaning that it is not a scientific law. Many people believe Charles Darwin first discovered the theory of evolution but it was actually Jean Baptist Lemarck. He called it the Theory of Transmutation of species')");
+    questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact18', 'The Wright brothers tested their invention by flying to Europe from South Carolina in order to prove their invention was sustainable and to make sales. They did not invent the first airplane, rather they invented the first successful motor airplane.')");
+    questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact19', 'Water is actually h20. Water is not purely blue rather its color varies based on the ambient conditions.')");
+    questionDB.execSQL("INSERT INTO Science_Facts(factID, fact)" + "VALUES ('fact20', 'In every case you want a fire to be you will always need Oxygen, heat and a fuel to keep the heat/fire alive. Fuel is not limited to engine gasoline rather materials that can continue to burn')");
 
-    
+
     }
 
     public LinkedList<QuestionSet> getQuestionSet(String tablePrefix)
