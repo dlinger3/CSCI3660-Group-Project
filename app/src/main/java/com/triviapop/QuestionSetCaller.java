@@ -495,7 +495,7 @@ public class QuestionSetCaller extends SQLiteOpenHelper
     questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest17', 'What year was the theory evolution discovered?', 'answ17', 'fact17')");
     questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest18', 'Two individuals who are responsible for travel across continent to continent in a matter of hours.', 'answ18', 'fact18')");
     questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest19', 'Which of the following statements is true about water:', 'answ19', 'fact19')");
-    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest10', 'What is needed to start/have a fire?', 'answ20', 'fact20')");
+    questionDB.execSQL("INSERT INTO Science_Questions(questID, question, answerID, factID) " + "VALUES ('quest20', 'What is needed to start/have a fire?', 'answ20', 'fact20')");
 
     
     questionDB.execSQL("INSERT INTO Science_Answers(answerID, answerA, answerB, answerC, answerD, correctAnswer)" + "VALUES('answ1', 'The Core layers', 'The Mantle layers', 'The Crust layers', 'The Magma layers', 'The Magma layers')");
