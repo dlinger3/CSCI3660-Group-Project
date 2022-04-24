@@ -47,17 +47,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/menu_button_background"
         android:text="@string/next_question"
-        android:layout_above="@+id/timer_bar"
+        android:layout_alignParentBottom="true"
         android:insetTop="0dp"
         android:insetBottom="0dp"/>
 
-    <ProgressBar
-        android:id="@+id/timer_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:max="100"
-        android:progress="0"
-        android:layout_alignParentBottom="true"/>
+
 
 </RelativeLayout>
