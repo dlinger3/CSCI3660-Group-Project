@@ -5,22 +5,15 @@
       <map>
         <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.4088541666666667" />
         <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/drawable/answer_button_background.xml" value="0.5703125" />
-<<<<<<< Updated upstream
-=======
         <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/drawable/entertainment_backdrop.xml" value="0.31354166666666666" />
         <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.4088541666666667" />
->>>>>>> Stashed changes
         <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/drawable/menu_button_background.xml" value="0.5703125" />
         <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/font/fonts.xml" value="0.5753846153846154" />
-        <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
+        <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/layout/question_result_activity.xml" value="0.5541666666666667" />
         <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/layout/quiz_activity.xml" value="0.5541666666666667" />
-<<<<<<< Updated upstream
-        <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/layout/quiz_complete_activity.xml" value="0.5541666666666667" />
-=======
         <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/layout/quiz_complete_activity.xml" value="0.33" />
         <entry key="..\:/UNG_Folder/Spring_2022/TriviaPopProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.4088541666666667" />
->>>>>>> Stashed changes
       </map>
     </option>
   </component>

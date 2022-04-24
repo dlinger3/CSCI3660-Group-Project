@@ -1,15 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="question_count">
-        <item>Question 1</item>
-        <item>Question 2</item>
-        <item>Question 3</item>
-        <item>Question 4</item>
-        <item>Question 5</item>
-        <item>Question 6</item>
-        <item>Question 7</item>
-        <item>Question 8</item>
-        <item>Question 9</item>
-        <item>Question 10</item>
-    </string-array>
-</resources>
+<resources></resources>

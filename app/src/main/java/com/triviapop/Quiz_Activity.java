@@ -3,42 +3,34 @@ package com.triviapop;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
-<<<<<<< Updated upstream
-=======
 import android.annotation.SuppressLint;
->>>>>>> Stashed changes
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-<<<<<<< Updated upstream
-public class Quiz_Activity extends AppCompatActivity {
-=======
 import com.triviapop.questionset.QuestionSet;
 
 import java.util.LinkedList;
->>>>>>> Stashed changes
 
-    private Button button_result;
 
-    RadioGroup radioGroup;
-    RadioButton radioButton;
-    TextView questionText;
+public class Quiz_Activity extends AppCompatActivity {
 
+    private static final int NUMBER_QUESTIONS_IN_QUIZ = 10;
+    private static int count;
+    private static int numCorrect;
+    private static LinkedList<QuestionSet> questionData;
+    private static String subject;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        Log.i("Quiz_Activity", "Entered new activity.");
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_activity);
-<<<<<<< Updated upstream
-        radioGroup = findViewById(R.id.answer_group); //Grabs the radio group
-        questionText = findViewById(R.id.question_text);  //Grabs the question
-=======
         Bundle savedData = getIntent().getExtras();
         subject = savedData.getString("subject");
 
@@ -106,67 +98,133 @@ import java.util.LinkedList;
         scanForReturn(toMenuButton);
         scanForClick(radioGroup, questionSet);
     }
->>>>>>> Stashed changes
 
-//        Button buttonsubmit = findViewById(R.id.button_submit);
-//        buttonsubmit.setOnClickListener(new View.OnClickListener())
+    @Override
+    protected void onNewIntent(Intent intent)
+    {
+        Log.d("DEBUG", "ENTERED onNewIntent...");
+        super.onNewIntent(intent);
+        setIntent(intent);
+        Bundle data = getIntent().getExtras();
+        count = data.getInt("count");
+//        if(count >= NUMBER_QUESTIONS_IN_QUIZ - 1)
+//        {
+//            finish();
+//        }
+    }
 
-        AppCompatButton returnToMenuButton = findViewById(R.id.return_to_menu);
-        returnToMenuButton.setOnClickListener(new View.OnClickListener() {
+
+    private void scanForReturn(AppCompatButton toMenuButton) {
+
+        toMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                returntomenu(view);
+                startActivity(new Intent(Quiz_Activity.this,MainActivity.class));
+                finish();
             }
         });
-
-
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int id)
-            {
-                switch (id)
-                {
-                    case R.id.answerA:
-                        openQuestion_Result_Activity();
-                        break;
-                    case R.id.answerB:
-                        openQuestion_Result_Activity();
-                        break;
-                    case R.id.answerC:
-                        openQuestion_Result_Activity();
-                        break;
-                    case R.id.answerD:
-                        openQuestion_Result_Activity();
-                        break;
-                }
-
-            }
-        });
-//        {
-//            @Override
-//            public void onClick(View view) {
-//                int radioID = radioGroup.getCheckedRadioButtonId();
-//
-//                radioButton = findViewById(radioID);
-//
-//                questionText.setText("Result: " + radioButton.getText());
-//            }
-//        });
     }
 
-    public void checkButton(View v) {
-        int radioID = radioGroup.getCheckedRadioButtonId();
-
-        radioButton = findViewById(radioID);
-
-        Toast.makeText(this, "Selected Radio Button: " + radioButton.getText(), Toast.LENGTH_SHORT).show();
-    }
-
-    public void returntomenu(View view) {
-        startActivity(new Intent(Quiz_Activity.this,MainActivity.class));
-    }
-    public void openQuestion_Result_Activity() {
+    private void openQuestion_Result_Activity(boolean wasCorrect, String factText) {
         Intent intent = new Intent(this, Question_Result_Activity.class);
+        intent.putExtra("result", wasCorrect);
+        intent.putExtra("count", count);
+        intent.putExtra("fact", factText);
+        intent.putExtra("correct", numCorrect);
         startActivity(intent);
+        if(count >= NUMBER_QUESTIONS_IN_QUIZ - 1)
+        {
+            finish();
+        }
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    public void scanForClick(View view, QuestionSet questionSet)
+    {
+        String correctAnswer = questionSet.getAnswerSet().getCorrectAnswer();
+        String factText = questionSet.getFact();
+
+        RadioButton radioButtonA = (RadioButton) findViewById(R.id.answerA);
+        RadioButton radioButtonB = (RadioButton) findViewById(R.id.answerB);
+        RadioButton radioButtonC = (RadioButton) findViewById(R.id.answerC);
+        RadioButton radioButtonD = (RadioButton) findViewById(R.id.answerD);
+
+        radioButtonA.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view)
+                    {
+                        Log.d("DEBUG", "in case A");
+                        String answerA = questionSet.getAnswerSet().getA();
+                        if (answerA.equals(correctAnswer))
+                        {
+                            numCorrect++;
+                            Log.d("DEBUG", "NUMBER OF CORRECT ANSWERED: " + numCorrect);
+                            openQuestion_Result_Activity(true, factText);
+                        }
+                        else
+                            {
+                                openQuestion_Result_Activity(false, factText);
+                            }
+                    }
+                });
+        radioButtonB.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view)
+                    {
+                        Log.d("DEBUG", "in case B");
+                        String answerB = questionSet.getAnswerSet().getB();
+                        if (answerB.equals(correctAnswer))
+                        {
+                            numCorrect++;
+                            Log.d("DEBUG", "NUMBER OF CORRECT ANSWERED: " + numCorrect);
+                            openQuestion_Result_Activity(true, factText);
+                        }
+                        else
+                        {
+                            openQuestion_Result_Activity(false, factText);
+                        }
+                    }
+                });
+        radioButtonC.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view)
+                    {
+                        Log.d("DEBUG", "in case A");
+                        String answerC = questionSet.getAnswerSet().getC();
+                        if (answerC.equals(correctAnswer))
+                        {
+                            numCorrect++;
+                            Log.d("DEBUG", "NUMBER OF CORRECT ANSWERED: " + numCorrect);
+                            openQuestion_Result_Activity(true, factText);
+                        }
+                        else
+                        {
+                            openQuestion_Result_Activity(false, factText);
+                        }
+                    }
+                });
+        radioButtonD.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view)
+                    {
+                        Log.d("DEBUG", "in case A");
+                        String answerD = questionSet.getAnswerSet().getD();
+                        if (answerD.equals(correctAnswer))
+                        {
+                            numCorrect++;
+                            Log.d("DEBUG", "NUMBER OF CORRECT ANSWERED: " + numCorrect);
+                            openQuestion_Result_Activity(true, factText);
+                        }
+                        else
+                        {
+                            openQuestion_Result_Activity(false, factText);
+                        }
+                    }
+                }
+        );
     }
 }

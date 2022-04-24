@@ -4,16 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-<<<<<<< Updated upstream
-=======
 import android.widget.TextView;
->>>>>>> Stashed changes
 
 public class Question_Result_Activity extends AppCompatActivity {
 
-    private Button nextQuestion;
+    private static final int NUMBER_QUESTIONS_IN_QUIZ = 10;
+    private static int count;
+    private static int numCorrect;
 
     /**
      * Builds the result screen after a quiz question is answered by the user.
@@ -26,9 +26,8 @@ public class Question_Result_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.question_result_activity);
-<<<<<<< Updated upstream
-=======
         Log.d("DEBUG", "on resume called in results");
 
         Button nextQuestion = (Button) findViewById(R.id.next_question_button);
@@ -89,23 +88,66 @@ public class Question_Result_Activity extends AppCompatActivity {
 
         scanForClick(nextQuestion, count, numCorrect);
     }
->>>>>>> Stashed changes
 
-        nextQuestion = (Button) findViewById(R.id.next_question_button);
-        //TODO This needs to instead load the quiz_activity layout, populated with the question set data for the next question
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        if(count >= NUMBER_QUESTIONS_IN_QUIZ)
+        {
+            int percentCorrect = calculatePercentCorrect(numCorrect);
+            openQuiz_Complete(percentCorrect);
+        }
+        else
+        {
+            returnToQuiz(numCorrect, count);
+        }
+    }
+
+    private void scanForClick(Button nextQuestion, int count, int numCorrect) {
         nextQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openQuiz_Complete();
+                if(count >= NUMBER_QUESTIONS_IN_QUIZ)
+                {
+                    int percentCorrect = calculatePercentCorrect(numCorrect);
+                    openQuiz_Complete(percentCorrect);
+                }
+                else
+                {
+                    returnToQuiz(numCorrect, count);
+                }
             }
         });
     }
 
-    public void nextq(View view) {
-        startActivity(new Intent(Question_Result_Activity.this, Quiz_Activity.class));
-    }
-    public void openQuiz_Complete() {
+    private void openQuiz_Complete(int numCorrect) {
+        Log.d("DEBUG", "NUMBER CORRECT PASSED TO THE FINAL INTENT CALL: " + numCorrect);
         Intent intent = new Intent(this, Quiz_Complete_Activity.class);
+
+        intent.putExtra("correct", numCorrect);
         startActivity(intent);
+        finish();
+
+    }
+
+    private void returnToQuiz(int numCorrect, int count)
+    {
+        Log.d("DEBUG", "NUMBER CORRECT BEING PASSED BACK TO QUIZ " + numCorrect);
+        Log.d("DEBUG", "COUNT BEING PASSED BACK TO QUIZ : " + count);
+        Intent intent = new Intent(this, Quiz_Activity.class);
+        intent.putExtra("correct", numCorrect);
+        intent.putExtra("count", count);
+        Log.d("DEBUG", "Returning to quiz...");
+        startActivity(intent);
+        finish();
+    }
+
+    private int calculatePercentCorrect(int numCorrect)
+    {
+
+        int percentCorrect = (int)(((double) numCorrect / (double) NUMBER_QUESTIONS_IN_QUIZ) * 100);
+        Log.d("DEBUG","NUMBER OF CORRECT ANSWERS TO DISPLAY: " + percentCorrect);
+        return percentCorrect;
     }
 }

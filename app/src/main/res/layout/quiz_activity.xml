@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quiz_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color">
@@ -19,7 +20,7 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/question_number_text_view"
+        android:id="@+id/question_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/app_banner"
@@ -33,7 +34,7 @@
         android:id="@+id/question_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/question_number_text_view"
+        android:layout_below="@+id/question_number"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
@@ -65,6 +66,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:background="@drawable/answer_button_background"
+            android:onClick="scanForClick"
             android:text="@string/answer_A"/>
 
         <RadioButton
@@ -77,6 +79,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:background="@drawable/answer_button_background"
+            android:onClick="scanForClick"
             android:text="@string/answer_B"/>
 
         <RadioButton
@@ -89,6 +92,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:background="@drawable/answer_button_background"
+            android:onClick="scanForClick"
             android:text="@string/answer_C"/>
 
         <RadioButton
@@ -101,6 +105,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:background="@drawable/answer_button_background"
+            android:onClick="scanForClick"
             android:text="@string/answer_D"/>
     </RadioGroup>
 
